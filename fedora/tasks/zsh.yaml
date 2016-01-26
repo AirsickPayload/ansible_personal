@@ -5,4 +5,4 @@
   shell: chsh -s /bin/zsh
 
 - name: copy personalized zshrc
-  copy: src=files/zshrc dest="/home/{{ user }}" owner="{{ user }}" group="{{ user }}" mode=0600
+  copy: src=files/zshrc dest="/home/{{ user }}/.zshrc" owner="{{ user }}" group="{{ user }}" mode=0600
