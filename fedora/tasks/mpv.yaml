@@ -1,0 +1,64 @@
+- name: install packages needed to properly compile mpv
+  become: yes
+  dnf: name="{{ item }}" state=present
+  with_items:
+    - "@X Software Development"
+    - "yasm"
+    - "libtool"
+    - "autoconf"
+    - "automake"
+    - "pulseaudio-libs-devel"
+    - "alsa-lib-devel"
+    - "fribidi"
+    - "fribidi-devel"
+    - "libjpeg"
+    - "freetype"
+    - "freetype-devel"
+    - "openssl-devel"
+    - "youtube-dl"
+    - "v4l-utils-devel-tools"
+    - "lua-devel"
+    - "lua"
+    - "luajit"
+    - "luajit-devel"
+    - "libcaca-devel"
+    - "caca-utils"
+    - "perl-Math-BigRat"
+    - "libvdpau-devel"
+    - "libvdpau-va-gl"
+    - "mesa-vdpau-drivers"
+    - "libguess"
+    - "libguess-devel"
+    - "rubberband"
+    - "rubberband-devel"
+
+- name: ensure that the git directory exists
+  file: path="{{ git_dir }}" state=directory
+
+- name: copy the mpv-build repo
+  git: repo=https://github.com/mpv-player/mpv-build.git dest="{{ full_dir }}"
+
+- name: execute script to download/update sources
+  register: up_res
+  shell: "{{ mpv_update }}"
+  args:
+    chdir: "{{ full_dir }}"
+
+- name: print output of above script
+  debug: var=up_res.stdout_lines
+
+- name: compile mpv
+  shell: "{{ mpv_build }} -j{{ cpu_cores }}"
+  args:
+    chdir: "{{ full_dir }}"
+
+- name: install mpv
+  become: yes
+  shell: "{{ mpv_install }}"
+  args:
+    chdir: "{{ full_dir }}"
+
+- name: clean up
+  shell: "{{ mpv_clean }}"
+  args:
+    chdir: {{ full_dir }}

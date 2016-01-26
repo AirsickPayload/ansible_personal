@@ -1,0 +1,8 @@
+- name: clone oh-my-zsh repo
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest="/home/{{ user }}/.oh-my-zsh"
+
+- name: change default shell to zsh
+  shell: chsh -s /bin/zsh
+
+- name: copy personalized zshrc
+  copy: src=files/zshrc dest="/home/{{ user }}" owner="{{ user }}" group="{{ user }}" mode=0600

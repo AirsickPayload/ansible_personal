@@ -1,0 +1,11 @@
+#run with --ask-become-pass !
+- hosts: all
+  vars_files:
+    - vars/mpv_vars.yaml
+    - vars/main.yaml
+
+  tasks:
+    - include: tasks/zsh.yaml
+    - include: tasks/rpmfusion.yaml
+    - include: tasks/seafile.yaml
+    - include: tasks/mpv.yaml

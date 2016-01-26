@@ -1,0 +1,8 @@
+git_dir: "~/git/"
+dir_mpv: "mpv-build"
+full_dir: "{{ git_dir }}{{ dir_mpv}}"
+mpv_update: "./update"
+mpv_build: "./build"
+mpv_clean: "./clean"
+mpv_install: "./install"
+cpu_cores: 4
