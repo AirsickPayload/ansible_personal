@@ -1,7 +1,7 @@
 - name: run Fedy installer script
   become: yes
   register: fedy_res
-  shell: curl http://folkswithhats.org/fedy-installer -o fedy-installer && chmod +x fedy-installer && ./fedy-installer
+  shell: curl http://folkswithhats.org/fedy-installer -o fedy-installer && chmod +x fedy-installer && ./fedy-installer && rm ./fedy-installer
 
 - name: print output of above script
   debug: var=fedy_res.stdout_lines
