@@ -8,6 +8,7 @@
     - include: tasks/zsh.yaml
     - include: tasks/touchpad.yaml
     - include: tasks/rpmfusion.yaml
+    - include: tasks/tlp.yaml
     - include: tasks/redshift.yaml
     - include: tasks/fedy.yaml
     - include: tasks/seafile.yaml
