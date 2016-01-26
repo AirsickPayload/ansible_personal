@@ -1,0 +1,6 @@
+- name: install redshift
+  become: yes
+  dnf: name=redshift state=present
+
+- name: copy redshift config
+  copy: src=files/redshift.conf dest=~/.config/redshift.conf owner="{{ user }}" group="{{ user }}" mode=0644

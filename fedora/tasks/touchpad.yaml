@@ -1,0 +1,3 @@
+- name: copy touchpad config
+  become: yes
+  copy: src="files/50-synaptics.conf" dest="/etc/X11/xorg.conf.d/50-synaptics.conf" owner=root group=root mode=0644
