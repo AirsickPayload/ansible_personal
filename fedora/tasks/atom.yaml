@@ -1,0 +1,7 @@
+- name: enable COPR atom repo
+  become: yes
+  shell: dnf copr enable helber/atom -y
+
+- name: install atom
+  become: yes
+  dnf: name=atom state=latest
