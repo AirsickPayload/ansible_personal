@@ -5,3 +5,6 @@
 - name: install atom
   become: yes
   dnf: name=atom state=latest
+
+- name: unpack and copy atom packages directory
+  unarchive: src=files/atom_packages.tar.xz dest="/home/{{ user }}/.atom/" owner="{{ user }}" group={{ user }}
