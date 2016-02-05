@@ -1,0 +1,8 @@
+- name: install kernel development package
+  dnf: name=kerel-devel state=present
+
+- name: install broadcom wifi package
+  dnf: name=broadcom-wl state=present
+
+- name: install KeePassX
+  dnf: name=keepassx state=present

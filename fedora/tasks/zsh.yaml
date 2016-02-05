@@ -1,8 +1,17 @@
 - name: clone oh-my-zsh repo
   git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest="/home/{{ user }}/.oh-my-zsh"
 
+- name: install zsh package
+  become: yes
+  dnf: name=zsh state=latest
+
+- name: install SELinux python bindings
+  become: yes
+  dnf: name=libselinux-python state=latest
+
 - name: change default shell to zsh
-  shell: chsh -s /bin/zsh
+  become: yes
+  user: name={{ user }} state=present shell=/bin/zsh
 
 - name: copy personalized zshrc
   copy: src=files/zshrc dest="/home/{{ user }}/.zshrc" owner="{{ user }}" group="{{ user }}" mode=0600

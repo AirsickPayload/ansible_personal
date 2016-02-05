@@ -2,6 +2,7 @@
   become: yes
   dnf: name="{{ item }}" state=present
   with_items:
+    - "@Development Tools"
     - "@X Software Development"
     - "yasm"
     - "libtool"
