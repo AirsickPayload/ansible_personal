@@ -6,5 +6,6 @@
   become: yes
   dnf: name=seafile-client-qt state=latest
 
-- name: set QT scaling factor to 2.0
-  shell: export QT_DEVICE_PIXEL_RATIO=2
+- name: set QT scaling factor to auto (system-wide)
+  become: yes
+  lineinfile: dest=/etc/profile line="export QT_DEVICE_PIXEL_RATIO=auto"

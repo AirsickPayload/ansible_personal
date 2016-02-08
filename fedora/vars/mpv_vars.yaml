@@ -1,4 +1,4 @@
-git_dir: "~/git/"
+git_dir: "/home/{{ user }}/git/"
 dir_mpv: "mpv-build"
 full_dir: "{{ git_dir }}{{ dir_mpv}}"
 mpv_update: "./update"

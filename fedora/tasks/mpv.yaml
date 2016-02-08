@@ -62,4 +62,4 @@
 - name: clean up
   shell: "{{ mpv_clean }}"
   args:
-    chdir: {{ full_dir }}
+    chdir: "{{ full_dir }}"
