@@ -1,0 +1,14 @@
+- name: check whether docker exists
+  shell: command -v docker >/dev/null 2>&1
+  ignore_errors: yes
+  register: result
+
+- name: copy Docker repo file
+  become: yes
+  copy: src=files/docker.repo dest=/etc/yum.repos.d/docker.repo
+  when: result|failed
+
+- name: install docker
+  become: yes
+  dnf: name=docker state=present
+  when: result|failed
