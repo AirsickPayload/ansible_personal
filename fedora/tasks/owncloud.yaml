@@ -1,0 +1,15 @@
+- name: download ownCloud repo file
+  become: yes
+  get_url: url="http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_{{ fedora_current }}/isv:ownCloud:desktop.repo" dest=/etc/yum.repos.d/owncloud.repo
+
+- name: install ownCloud client
+  become: yes
+  dnf: name=owncloud-client state=latest
+
+- name: install ownCloud Nautilus integration package
+  become: yes
+  dnf: name=owncloud-client-nautilus state=latest
+
+- name: set QT scaling factor to auto (system-wide)
+  become: yes
+  lineinfile: dest=/etc/profile line="export QT_DEVICE_PIXEL_RATIO=auto"
