@@ -1,0 +1,11 @@
+- name: enable COPR seafile repo
+  become: yes
+  shell: dnf copr enable pkerling/seafile -y
+
+- name: install seafile qt client
+  become: yes
+  dnf: name=seafile-client-qt state=latest
+
+- name: set QT scaling factor to auto (system-wide)
+  become: yes
+  lineinfile: dest=/etc/profile line="export QT_DEVICE_PIXEL_RATIO=auto"
