@@ -12,3 +12,11 @@
   become: yes
   dnf: name=docker state=present
   when: result|failed
+
+- name: add docker group
+  become: yes
+  group: name=docker state=present
+
+- name: ensure that user is in the 'docker' group
+  become: yes
+  user: name="{{ user }}" group=docker append=yes

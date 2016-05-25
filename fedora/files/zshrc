@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"#
 alias touchscreen="xinput disable 10"
 alias touchscreenUSB="echo 'auto' > '/sys/bus/usb/devices/1-4/power/control'"
-alias  update='sudo dnf update'
+alias update='sudo dnf upgrade'
 alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
@@ -96,3 +96,6 @@ alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr 
 alias meminfo='free -m -l -t'
 alias countFiles='find . -type f | wc -l'
 alias startChefDKContainer='docker run -it --net host -v /home/alan/Seafile/Personal/STUDIA_Materialy/Magisterka/Chef_Container_Playground:/code al4n00/mychefdk:latest /bin/bash'
+alias gitbranchpush='git push -u origin '
+alias removeOldContainers='docker rm `docker ps --no-trunc -aq`'
+alias removeOldImages='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
