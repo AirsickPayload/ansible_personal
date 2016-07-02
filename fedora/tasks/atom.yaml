@@ -7,7 +7,4 @@
   dnf: name=atom state=latest
 
 - name: ensure that the .atom directory exists
-  file: path="/home/{{ user }}/.atom" state=directory
-
-- name: unpack and copy atom packages directory
-  unarchive: src=files/atom_packages.tar.xz dest="/home/{{ user }}/.atom/" owner="{{ user }}" group={{ user }}
+  file: path="/home/{{ user }}/.atom/packages" state=directory

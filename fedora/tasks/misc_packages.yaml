@@ -1,8 +1,15 @@
 - name: install kernel development package
-  dnf: name=kerel-devel state=present
+  become: yes
+  dnf: name=kernel-devel state=present
 
 - name: install broadcom wifi package
+  become: yes
   dnf: name=broadcom-wl state=present
 
+- name: enable KeePassX COPR repo
+  become: yes
+  shell: "dnf copr enable georgespk/keepassx -y"
+
 - name: install KeePassX
+  become: yes
   dnf: name=keepassx state=present

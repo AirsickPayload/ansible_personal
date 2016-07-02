@@ -3,5 +3,6 @@
   shell: dnf config-manager --add-repo=https://unitedrpms.github.io/unitedrpms.repo
 
 - name: download and import UnitedRpms GPG key
+  become: yes
   rpm_key: state=present key=https://raw.githubusercontent.com/UnitedRPMs/unitedrpms.github.io/master/URPMS-GPG-PUBLICKEY-Fedora-24
 
