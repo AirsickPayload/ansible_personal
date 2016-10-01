@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/alan/.oh-my-zsh
+export ZSH=/home/{{ user }}/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME={{ zsh_theme }}
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -81,21 +81,6 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"#
-alias touchscreen="xinput disable 10"
-alias touchscreenUSB="echo 'auto' > '/sys/bus/usb/devices/1-4/power/control'"
-alias update='sudo dnf upgrade'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
-alias suspend='systemctl suspend'
-alias install='sudo dnf install'
-alias df='df -H'
-alias du='du -H'
-alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
-alias meminfo='free -m -l -t'
-alias countFiles='find . -type f | wc -l'
-alias startChefDKContainer='docker run -it --net host -v /home/alan/Seafile/Personal/STUDIA_Materialy/Magisterka/Chef_Container_Playground:/code al4n00/mychefdk:latest /bin/bash'
-alias gitbranchpush='git push -u origin '
-alias removeOldContainers='docker rm `docker ps --no-trunc -aq`'
-alias removeOldImages='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[[ -f ~/.shell_extras.sh ]] && . ~/.shell_extras.sh

@@ -5,12 +5,12 @@
     - vars/main.yaml
 
   tasks:
-    - include: tasks/zsh.yaml
-    - include: tasks/unitedrpms.yaml
-    - include: tasks/tlp.yaml
-    - include: tasks/misc_packages.yaml
-    - include: tasks/redshift.yaml
-    - include: tasks/atom.yaml
-    - include: tasks/seafile.yaml
-    - include: tasks/mpv.yaml
-    - include: tasks/docker.yaml
+#    - include: tasks/zsh.yaml
+#    - include: tasks/unitedrpms.yaml
+#    - include: tasks/tlp.yaml
+#    - include: tasks/misc_packages.yaml
+#    - include: tasks/redshift.yaml
+#    - include: tasks/atom.yaml
+#    - include: tasks/seafile.yaml
+#    - include: tasks/mpv.yaml
+#    - include: tasks/docker.yaml

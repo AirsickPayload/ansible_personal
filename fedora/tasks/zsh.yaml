@@ -14,4 +14,9 @@
   user: name={{ user }} state=present shell=/bin/zsh
 
 - name: copy personalized zshrc
-  copy: src=files/zshrc dest="/home/{{ user }}/.zshrc" owner="{{ user }}" group="{{ user }}" mode=0600
+  become: yes
+  template: src=templates/zshrc.j2 dest="/home/{{ user }}/.zshrc" owner="{{ user }}" mode=0644
+
+- name: copy personalized aliases and general shell extras
+  become: yes
+  copy: src=files/.shell_extras.sh dest="/home/{{ user }}/.shell_extras.sh" owner="{{ user }}" mode=0644
