@@ -14,4 +14,4 @@ alias countFiles='find . -type f | wc -l'
 alias startChefDKContainer='docker run -it --net host -v /home/alan/Seafile/Personal/STUDIA_Materialy/Magisterka/Chef_Container_Playground:/code al4n00/mychefdk:latest /bin/bash'
 alias gitbranchpush='git push -u origin '
 alias removeOldContainers='docker rm $(docker ps -q -f status=exited)'
-alias removeOldImages='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+alias removeOldImages='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
