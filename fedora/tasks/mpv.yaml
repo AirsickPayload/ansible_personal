@@ -26,7 +26,6 @@
     - "caca-utils"
     - "perl-Math-BigRat"
     - "libvdpau-devel"
-    - "libvdpau-va-gl"
     - "mesa-vdpau-drivers"
     - "libguess"
     - "libguess-devel"

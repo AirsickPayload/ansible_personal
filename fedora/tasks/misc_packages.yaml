@@ -2,10 +2,6 @@
   become: yes
   dnf: name=kernel-devel state=present
 
-- name: install broadcom wifi package
-  become: yes
-  dnf: name=broadcom-wl state=present
-
 - name: enable KeePassX COPR repo
   become: yes
   shell: "dnf copr enable georgespk/keepassx -y"

@@ -4,7 +4,7 @@
 
 - name: install seafile qt client
   become: yes
-  dnf: name=seafile-client-qt state=latest
+  shell: dnf install -y seafile-client-qt
 
 #- name: set QT scaling factor to auto (system-wide)
 #  become: yes

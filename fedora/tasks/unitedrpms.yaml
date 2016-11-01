@@ -1,6 +1,6 @@
 - name: add UnitedRpms repo
   become: yes
-  shell: dnf config-manager --add-repo=https://unitedrpms.github.io/unitedrpms.repo
+  shell: dnf -y install https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/RPM/unitedrpms-25-1.noarch.rpm
 
 - name: download and import UnitedRpms GPG key
   become: yes

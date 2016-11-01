@@ -1,2 +1,3 @@
-user: "alan"
-fedora_current: 24
+user: "amatuszczak"
+fedora_current: 25
+zsh_theme: "mh"
