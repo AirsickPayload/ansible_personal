@@ -15,3 +15,8 @@ alias startChefDKContainer='docker run -it --net host -v /home/alan/Seafile/Pers
 alias gitbranchpush='git push -u origin '
 alias removeOldContainers='docker rm $(docker ps -q -f status=exited)'
 alias removeOldImages='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+
+convertToUTF8(){
+  # $1 - input format; $2 - input file; $3 - output file
+  iconv -f $1 -t utf8 $2 > $3
+}
