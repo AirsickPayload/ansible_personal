@@ -1,0 +1,4 @@
+user: "PLACEHOLDER"
+docker_boot_start: no
+fedora_current: 25
+zsh_theme: "mh"

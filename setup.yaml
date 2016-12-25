@@ -1,0 +1,5 @@
+#run with --ask-become-pass !
+
+- hosts: all
+  roles:
+    - { role: fedora, user: "amatuszczak" }

@@ -15,8 +15,8 @@
 
 - name: copy personalized zshrc
   become: yes
-  template: src=templates/zshrc.j2 dest="/home/{{ user }}/.zshrc" owner="{{ user }}" mode=0644
+  template: src=zshrc.j2 dest="/home/{{ user }}/.zshrc" owner="{{ user }}" mode=0644
 
 - name: copy personalized aliases and general shell extras
   become: yes
-  copy: src=files/.shell_extras.sh dest="/home/{{ user }}/.shell_extras.sh" owner="{{ user }}" mode=0644
+  copy: src=.shell_extras.sh dest="/home/{{ user }}/.shell_extras.sh" owner="{{ user }}" mode=0644

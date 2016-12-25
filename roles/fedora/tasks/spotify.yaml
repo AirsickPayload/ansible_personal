@@ -1,0 +1,13 @@
+---
+- name: copy Spotify repo file
+  become: yes
+  copy:
+    src: fedora-spotify.repo
+    dest: /etc/yum.repos.d/fedora-spotify.repo
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Install Spotify
+  become: yes
+  dnf: name=spotify-client state=present

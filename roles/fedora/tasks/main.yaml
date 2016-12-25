@@ -1,0 +1,46 @@
+---
+
+- name: Essentials
+  include: essentials.yaml
+  tags:
+    - essentials
+
+- name: RPMFusion
+  include: rpmfusion.yaml
+  tags:
+    - rpmfusion
+
+- name: Misc. packages installation (Keepass, Seafile)
+  include: misc_packages.yaml
+  tags:
+    - misc_packages
+
+- name: Docker installation
+  include: docker.yaml
+  tags:
+    - docker
+
+- name: mpv installation
+  include: mpv.yaml
+  tags:
+    - mpv
+
+- name: redshift installation and configuration
+  include: redshift.yaml
+  tags:
+    - redshift
+
+- name: tmux installation and configuration
+  include: tmux.yaml
+  tags:
+    - tmux
+
+- name: Zsh install & conf
+  include: zsh.yaml
+  tags:
+    - zsh
+
+- name: Spotify install
+  include: spotify.yaml
+  tags:
+    - spotify

@@ -5,10 +5,9 @@
     - tlp
     - tlp-rdw
 
-#- name: copy TLP configuration file
-#  become: yes
-#  copy: src=files/tlp dest=/etc/default/tlp owner=root group=root mode=0644
-
 - name: start TLP
   become: yes
-  shell: tlp start
+  service:
+    name: tlp
+    state: started
+    enables: yes

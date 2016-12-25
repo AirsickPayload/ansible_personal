@@ -1,0 +1,16 @@
+---
+- name: Check if python-dnf is installed (bare-bones way)
+  shell: rpm -qa | grep python2-dnf
+  ignore_errors: yes
+  register: dnf_check
+
+- name: Install python2-dnf, required by all other installation tasks
+  become: yes
+  shell: dnf install python2-dnf -y
+  when: dnf_check|failed
+
+- name: Ensure that git is installed
+  become: yes
+  dnf:
+    name: git
+    state: present

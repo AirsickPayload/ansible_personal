@@ -1,0 +1,7 @@
+- name: install tmux
+  become: yes
+  dnf: name=tmux state=present
+
+- name: copy tmux conf to user's directory
+  become: yes
+  copy: src=tmux.conf dest="~/.tmux.conf" owner="{{ user }}" group="{{ user}}" mode=0644

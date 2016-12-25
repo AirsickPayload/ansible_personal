@@ -1,8 +1,0 @@
-- name: add UnitedRpms repo
-  become: yes
-  shell: dnf -y install https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/master/RPM/unitedrpms-25-1.noarch.rpm
-
-- name: download and import UnitedRpms GPG key
-  become: yes
-  rpm_key: state=present key=https://raw.githubusercontent.com/UnitedRPMs/unitedrpms.github.io/master/URPMS-GPG-PUBLICKEY-Fedora-24
-
