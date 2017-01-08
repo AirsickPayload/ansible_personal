@@ -4,4 +4,4 @@
 
 - name: copy tmux conf to user's directory
   become: yes
-  copy: src=tmux.conf dest="~/.tmux.conf" owner="{{ user }}" group="{{ user}}" mode=0644
+  copy: src=tmux.conf dest="/home/{{ user }}/.tmux.conf" owner="{{ user }}" group="{{ user}}" mode=0644
