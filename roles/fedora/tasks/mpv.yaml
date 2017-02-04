@@ -32,6 +32,9 @@
     - "rubberband"
     - "rubberband-devel"
 
+- name: Include mpv vars
+  include_vars: mpv_vars.yaml
+
 - name: ensure that the git directory exists
   file: path="{{ git_dir }}" state=directory
 
