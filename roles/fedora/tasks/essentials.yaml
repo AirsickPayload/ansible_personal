@@ -14,3 +14,9 @@
   dnf:
     name: git
     state: present
+
+- name: Install libselinux-python, otherwise file-based tasks will most likely fail!
+  become: yes
+  dnf:
+    name: libselinux-python
+    state: present
